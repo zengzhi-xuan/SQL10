@@ -1,0 +1,52 @@
+﻿信息系统与数据库技术练习10答题卡
+
+班级：     19信息管理2班
+姓名：     曾智轩
+学号：     20190307211
+
+注：请将答案放置在序号下方。*/
+
+（一）
+1.
+USE Project
+2.
+SELECT Ename,WorkDate,Esex
+FROM Employee
+WHERE Did='D001'
+ORDER BY WorkDate DESC
+3.
+SELECT Ename,WorkDate,Esex
+FROM Employee
+ORDER BY BasePay ASC,Did DESC
+4.
+SELECT *
+FROM Employee 
+WHERE YEAR(WorkDate)>=2000
+ORDER BY WorkDate DESC
+5.
+SELECT MAX(Wages) AS 最高报酬,MIN(Wages) AS 最低报酬,
+SUM(Wages) AS 总报酬,AVG(Wages) AS 平均报酬
+FROM EP
+6.
+SELECT COUNT(*) AS 记录数,COUNT(DISTINCT Pid) AS 项目数
+FROM EP
+7.
+SELECT AVG(Wages) AS 总报酬,MIN(Wages) AS 最低报酬
+FROM EP
+WHERE Pid='A002'
+8.
+SELECT * INTO GGZ
+FROM Employee
+WHERE BasePay>=9700
+9.
+SELECT Ename,Esex INTO #MenE
+FROM Employee
+WHERE Esex=1
+10.
+SELECT Ename ,Esex, Bonus
+FROM Employee
+WHERE Did='D002'
+UNION
+SELECT Ename ,Esex, Bonus
+FROM Employee
+WHERE Esex=0
